@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import render_template
+from flask import render_template, request
 
 app = Flask(__name__)
 
@@ -15,6 +15,11 @@ def index():
 @app.route('/usuario/<username>/<int:age>') #string #integer
 def usuario(username, age):
     return 'Hola '+username+' '+'tienes ' + str(age) + ' años'
+
+@app.route('/datos')
+def datos():
+    nombre = request.args.get('name', '') #Diccionario
+    return 'Listado de datos: ' + str(nombre)
 
 if __name__ == '__main__':
     app.run(debug=True)
