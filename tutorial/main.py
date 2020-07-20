@@ -12,6 +12,9 @@ def index():
 
     return render_template('index.html', username=name, courseName=course, premium=isPremium, courses=courses)
 
+@app.route('/usuario/<username>/<int:age>') #string #integer
+def usuario(username, age):
+    return 'Hola '+username+' '+'tienes ' + str(age) + ' años'
 
 if __name__ == '__main__':
     app.run(debug=True)
