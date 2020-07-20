@@ -3,6 +3,15 @@ from flask import render_template, request
 
 app = Flask(__name__)
 
+@app.before_request
+def beforeRequest():
+    print('Antes de la petición')
+
+@app.after_request
+def afterRequest(response):
+    print('Después de la petición')
+    return response
+
 @app.route('/')
 def index():
     name = 'Codi'
