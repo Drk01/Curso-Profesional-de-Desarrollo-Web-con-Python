@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Index del sitio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </head>
 <body>
     <h2>Hola {{ username }}</h2>
@@ -30,5 +32,7 @@
             {% endfor %}
         </ul>
     {% endif %}
+
+    <img src="{{ url_for('static', filename='img/dogs.jpg') }} " alt="">
 </body>
 </html>
